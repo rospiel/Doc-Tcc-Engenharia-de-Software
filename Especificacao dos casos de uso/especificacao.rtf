@@ -219,7 +219,7 @@ Este fluxo tem como finalidade consultar um veterin\'e1rio no sistema.\par
 \pard\sl240\slmult1\par
 Tipo de Fluxo: Alternativo\par
 [Cancelar Consulta]\par
-Este fluxo tem como finalidade \par
+Este fluxo tem como finalidade cancelar a consulta.\par
 
 \pard 
 {\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
@@ -229,22 +229,12 @@ Este fluxo tem como finalidade \par
 
 \pard\sl240\slmult1\par
 Tipo de Fluxo: Erro\par
-[Campos n\'e3o informados]\par
-Este fluxo tem como finalidade validar se os campos obrigat\'f3rio foram informados.\par
+[Veterin\'e1rio(a)(s) n\'e3o encontrado]\par
+Este fluxo tem como finalidade exibir mensagem quando nenhum veterin\'e1rio for encontrado.\par
 
 \pard 
 {\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
-\fi-360\li720\sl240\slmult1 O sistema informa que o campo precisa ser informado;\par
-{\pntext\f0 2.\tab}Fim do caso de uso; \par
-
-\pard\sl240\slmult1\par
-Tipo de Fluxo: Erro\par
-[Cadastro j\'e1 realizado]\par
-Este fluxo tem como finalidade validar a exist\'eancia de algum cadastro pr\'e9 existente com o cpf informado.\par
-
-\pard 
-{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
-\fi-360\li720\sl240\slmult1 O sistema exibe a mensagem que j\'e1 existe um cadastro com o cpf informado;\par
+\fi-360\li720\sl240\slmult1 O sistema exibe a mensagem que n\'e3o foram encontrados veterin\'e1rio(a)(s);\par
 {\pntext\f0 2.\tab}Fim do caso de uso; \par
 
 \pard\sl240\slmult1\par
@@ -261,45 +251,78 @@ Este fluxo tem como finalidade validar se o cpf informa \'e9 v\'e1lido.\par
 ................................................................................................................................................\par
 \par
 [Alterar veterin\'e1rio]\par
-Descri\'e7\'e3o do Caso de Uso: Este caso de uso tem como finalidade \par
+Descri\'e7\'e3o do Caso de Uso: Este caso de uso tem como finalidade alterar um veterin\'e1rio.\par
 Funcionalidades:\par
 
-\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl240\slmult1 Alterar Veterin\'e1rio\par
+{\pntext\f1\'B7\tab}Cancelar altera\'e7\'e3o\par
 
-\pard\sl240\slmult1 Ator (es):\par
+\pard\sl240\slmult1 Ator (es): Administrador\par
 Pr\'e9-Condi\'e7\'f5es: Para que este caso de uso seja iniciado \'e9 imprescind\'edvel:\par
 
 \pard 
 {\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
-\fi-360\li720\sl240\slmult1\par
+\fi-360\li720\sl240\slmult1 O administrador deve ter acesso \'e0 internet e a um browser.\par
+{\pntext\f0 2.\tab}realizar o caso de uso [Consultar veterin\'e1rio].\par
+{\pntext\f0 3.\tab}Encontre o veterin\'e1rio.\par
 
-\pard\sl240\slmult1 P\'f3s-Condi\'e7\'e3o:\par
+\pard\sl240\slmult1 P\'f3s-Condi\'e7\'e3o: \'c9 exibida mensagem de altera\'e7\'e3o realizada com sucesso.\par
 \par
 Tipo de Fluxo: Principal\par
-[]\par
-Este fluxo tem como finalidade \par
+[Alterar Veterin\'e1rio]\par
+Este fluxo tem como finalidade alterar um veterin\'e1rio no sistema.\par
 
 \pard 
 {\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
-\fi-360\li720\sl240\slmult1\par
+\fi-360\li720\sl240\slmult1 O ator realiza o caso de uso [Consultar veterin\'e1rio];\par
+{\pntext\f0 2.\tab}O ator seleciona o veterin\'e1rio na listagem clicando por sobre o icone representando um l\'e1pis;\par
+{\pntext\f0 3.\tab}O sistema exibe um formul\'e1rio com os campos nome, cpf, identidade, registro no conselho veterin\'e1rio e um combo box de sele\'e7\'e3o dos tipos de animais o mesmo pode tratar do cadastro atual do veterin\'e1rio selecionado;\par
+{\pntext\f0 4.\tab}O ator altera os campos desejados;\par
+{\pntext\f0 5.\tab}O sistema valida a elegibilidade do cpf e se os campos foram preenchidos, se positivo libera o clique no bot\'e3o "Alterar";\par
+{\pntext\f0 6.\tab}O ator clica por sobre o bot\'e3o "Alterar";\par
+{\pntext\f0 7.\tab}O sistema de posse das informa\'e7\'f5es realiza a busca na base afim de encontrar o cpf que n\'e3o sej\'e1 do identificador \'fanico do veterin\'e1rio que ser\'e1 alterado, se encontrado exibe mensagem de que j\'e1 existe um veterin\'e1rio cadastrado com o cpf informado do contr\'e1rio concretiza a altera\'e7\'e3o e exibe a mensagem de altera\'e7\'e3o realizado com sucesso;\par
+{\pntext\f0 8.\tab}Fim do caso de uso;\par
 
 \pard\sl240\slmult1\par
 Tipo de Fluxo: Alternativo\par
-[]\par
-Este fluxo tem como finalidade \par
+[Cancelar Altera\'e7\'e3o]\par
+Este fluxo tem como finalidade cancelar a altera\'e7\'e3o.\par
 
 \pard 
 {\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
-\fi-360\li720\sl240\slmult1\par
+\fi-360\li720\sl240\slmult1 O ator clica por sobre o bot\'e3o "Cancelar";\par
+{\pntext\f0 2.\tab}O sistema exibe a tela de listagem;\par
+{\pntext\f0 3.\tab}Fim do caso de uso;\par
 
 \pard\sl240\slmult1\par
 Tipo de Fluxo: Erro\par
-[]\par
-Este fluxo tem como finalidade \par
+[Campos n\'e3o informados]\par
+Este fluxo tem como finalidade validar se os campos obrigat\'f3rio foram informados.\par
 
 \pard 
 {\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
-\fi-360\li720\sl240\slmult1\par
+\fi-360\li720\sl240\slmult1 O sistema informa que o campo precisa ser informado;\par
+{\pntext\f0 2.\tab}Fim do caso de uso; \par
+
+\pard\sl240\slmult1\par
+Tipo de Fluxo: Erro\par
+[Cpf j\'e1 cadastrado em outro veterin\'e1rio]\par
+Este fluxo tem como finalidade validar a exist\'eancia de algum cadastro que n\'e3o seja o que sofrer\'e1 altera\'e7\'e3o com o mesmo cpf.\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1 O sistema exibe a mensagem que j\'e1 existe um cadastro com o cpf informado;\par
+{\pntext\f0 2.\tab}Fim do caso de uso; \par
+
+\pard\sl240\slmult1\par
+Tipo de Fluxo: Erro\par
+[Cpf n\'e3o eleg\'edvel]\par
+Este fluxo tem como finalidade validar se o cpf informa \'e9 v\'e1lido.\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl240\slmult1 O sistema exibe a mensagem quanto a n\'e3o elegibilidade do cpf informado;\par
+{\pntext\f0 2.\tab}Fim do caso de uso; \par
 
 \pard\sl240\slmult1\par
 \par
